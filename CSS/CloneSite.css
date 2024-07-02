@@ -2806,6 +2806,7 @@ input[type="submit"]:hover {
 .GraniteName,
 .MarbleName {
   padding: 15px;
+  margin-top: -10px;
   background-color: var(--tertiary-color);
   position: relative;
   text-align: center;
