@@ -2755,7 +2755,7 @@ input[type="submit"]:hover {
   z-index: 9;
   visibility: hidden;
   cursor: pointer;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .gReadMore > ul {
@@ -2766,7 +2766,7 @@ input[type="submit"]:hover {
   border-radius: 50px;
   background-color: #fff;
   overflow: hidden;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -2800,7 +2800,7 @@ input[type="submit"]:hover {
 .gReadMore > ul > li:nth-child(1) > a > i:hover,
 .gReadMore > ul > li:nth-child(2) > a:hover {
   color: var(--main-color);
-  transition: all .5s linear;
+  transition: all 0.5s linear;
 }
 
 .GraniteName,
@@ -4109,6 +4109,119 @@ th {
   background-color: var(--main-color);
 }
 
+.quick-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.quick-view.visible {
+  display: block;
+  position: fixed;
+  opacity: 1;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.quick-view-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.quick-view-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.quick-view-topBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 44px;
+  width: 100%;
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+}
+
+.quick-view-button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  float: right;
+  color: #fff;
+  opacity: 0.75;
+  display: block;
+  background: 0 0;
+  cursor: pointer;
+  box-shadow: none;
+  overflow: visible;
+  position: relative;
+  align-content: center;
+  transition: opacity 0.2s;
+}
+
+.quick-view-button:first-child {
+  font-size: 1.75rem;
+}
+
+.quick-view-button:nth-child(2),
+.quick-view-button:nth-child(3) {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.bi-zoom-in,
+.bi-zoom-out {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.quick-view-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: transparent;
+  transform: translate(-50%, -50%);
+}
+
+.quick-view-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 44px;
+}
+
+.quick-view-imgName {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 13px;
+  padding: 10px;
+  line-height: 20px;
+  color: #ccc;
+}
+
 /* @media (min-width: 320px) and (max-width: 480px) {} Mobile Devices */
 
 /* @media (min-width: 481px) and (max-width: 768px) {} Ipads and Tablets */
@@ -4409,11 +4522,11 @@ th {
   .BlogContent {
     margin-bottom: 30px;
   }
-  
+
   #newSlider .slide_show {
     max-width: 992px;
   }
-  
+
   #newSlider .slide {
     flex: 0 0 450px !important;
     max-width: 450px !important;
@@ -4464,6 +4577,14 @@ th {
   }
 }
 
+@media screen and (max-width: 814px) {
+  .bi-zoom-in,
+  .bi-zoom-out {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 891px) {
   #S1info,
   #S2info,
@@ -4494,7 +4615,7 @@ th {
     display: block;
     width: 50%;
   }
-  
+
   #newSlider .slide_show {
     max-width: 700px;
   }
@@ -4787,7 +4908,7 @@ th {
   #imgText3 {
     padding: 35px !important;
   }
-  
+
   #newSlider .slide_show {
     max-width: 315px;
   }
